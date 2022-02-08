@@ -14,9 +14,9 @@ def main(event):
     # Import and format date fields from HubSpot record
 
     creationDate = int(event.get('inputFields').get('createdate'))
-    creationDate_s = creationDate / 1000
+    creationDate_s = creationDate / 1000 #Convert to seconds
     mqlDate = int(event.get('inputFields').get('hs_lifecyclestage_marketingqualifiedlead_date'))
-    mqlDate_s = mqlDate / 1000
+    mqlDate_s = mqlDate / 1000 #Convert to seconds
     leadScoringDuration = days_between(creationDate_s, mqlDate_s)
 
     # Output calculation of differences in days.
